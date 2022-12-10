@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/sass/main.sass" />
+    <title>Notas</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="container">
+        <div class="navbar">
+          <button class="add-note btn" type="button">
+            <a href="/"><i class="fa-plus fas"></i></a>
+          </button>
+          <button class="btn theme-toggle" type="button">
+            <a href="/"
+              ><i class="fa-sun fas">/<i class="fa-moon fas"></i></i
+            ></a>
+          </button>
+        </div>
+        <main class="main">
+          <header class="header">
+            <h1>Notas</h1>
+            <h2>Anote coisas importantes para você.</h2>
+          </header>
+          <div class="notes">
+            <div class="notes__list"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="notification"></div>
+    <!-- <audio id="audio">
+      <source src="/notification.670e9e3f.ogg" type="audio/ogg" />
+    </audio> -->
+    <script type="module" src="src/js/controller.js"></script>
+  </body>
+</html>

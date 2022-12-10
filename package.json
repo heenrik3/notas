@@ -1,0 +1,20 @@
+{
+  "name": "notas",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.1"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.1",
+    "@parcel/transformer-sass": "^2.8.1",
+    "@parcel/transformer-webmanifest": "^2.8.1"
+  }
+}

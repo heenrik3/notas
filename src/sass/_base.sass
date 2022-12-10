@@ -1,0 +1,165 @@
+@import "mixins"
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap')
+
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: inherit
+
+html
+  font-size: 62.5%
+
+  @include respond(tab-land)
+    font-size: 56.25%
+
+  @include respond(tab-port)
+    font-size: 50%
+
+  @include respond(phone)
+    font-size: 55%
+
+  // @include respond(big-desktop)
+  //   font-size: 75%
+
+body
+  box-sizing: border-box
+  font-family: 'Fira Sans', sans-serif
+  font-weight: 400
+  font-size: 1.4rem
+
+a
+  color: inherit
+  text-decoration: none
+
+input, button, textarea
+  font-family: inherit
+  font-weight: inherit
+  font-size: inherit
+  background-color: inherit
+  color: inherit
+
+button
+  cursor: pointer
+
+textarea
+  resize: none
+
+.root
+  height: 100vh
+  
+  display: flex
+  transition: background-color 0.1s ease-out, color 0.2s ease-out !important
+
+  & , *
+    transition: .2s
+
+.container
+  flex: 1
+  display: flex
+
+  @include respond(tab-port)
+    flex-direction: column-reverse
+    justify-content: space-between
+
+.btn
+  width: 5rem
+  height: 5rem
+  border-radius: 50%
+
+.main
+  display: flex
+  flex-direction: column
+
+  @include respond(tab-land)
+    max-height: 90vh
+
+.header
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding: 2.5rem
+
+  @include respond(phone)
+    padding: 1.5rem
+
+  & h1
+    margin-bottom: 2.5rem
+    font-size: 3.6rem
+
+    @include respond(tab-land)
+      margin: 0
+
+.notes
+  display: flex
+  overflow: auto
+
+  &::-webkit-scrollbar
+    width: 10px
+
+  &::-webkit-scrollbar-track
+    background: #f1f1f1
+
+  &::-webkit-scrollbar-thumb
+    background: #888
+
+  &__list
+    height: fit-content
+    padding: 2.5rem
+
+    display: flex
+    flex-wrap: wrap
+    gap: 2rem
+
+    @include respond(phone)
+      padding: 1.5rem
+      justify-content: center
+
+.note
+  // @include respond(tab-land)
+  //   width: 23rem
+  //   height: 23rem
+  //   max-width: 23rem
+  //   max-height: 23rem
+  //   font-size: 2rem
+  
+  @include respond(phone)
+    height: 30rem
+    width: 100%
+    // font-size: 1.1rem
+    // width: 19rem
+    // height: 19rem
+    // max-width: 19rem
+    // max-height: 19rem
+  &__btn
+    font-size: 1.8rem !important
+
+.spinner
+  margin: 5rem auto
+  display: flex
+  align-items: center
+
+  i
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 4rem
+    height: 6rem
+    width: 6rem
+    fill: inherit
+    animation: rotate .5s infinite linear
+
+
+@keyframes rotate
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(360deg)
+
+
+.notification
+  @include respond(tab-land)
+    width: 18rem !important
