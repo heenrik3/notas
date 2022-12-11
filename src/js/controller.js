@@ -7,21 +7,20 @@ import notifyView from './views/notifyView.js'
 async function controlAddNote() {
   model.increaseNoteCount()
   notesView.render(model.state.notes)
-  notifyView.newNotification('success', 'Nota criada')
+  notifyView.newNotification('success', 'Nota criada.')
 }
 
 async function controlDeleteNote(index) {
   model.decreaseNoteCount(index)
 
-  if (model.state.notes.length < 1) notesView.renderMessage()
-  else notesView.render(model.state.notes)
+  notesView.render(model.state.notes)
 
-  notifyView.newNotification('error', `Nota ${index + 1} excluida`)
+  notifyView.newNotification('error', 'Nota excluída.')
 }
 
 async function controlSaveNote(data) {
   model.increaseNoteCount(data)
-  notifyView.newNotification('success', `Nota salva com sucesso`)
+  notifyView.newNotification('success', 'Nota salva.')
 }
 
 async function controlTheme() {
@@ -35,9 +34,7 @@ function start() {
   notesView.addHandlerSaveNote(controlSaveNote)
   notesView.addHandlerDeleteNote(controlDeleteNote)
 
-  if (model.state.notes) {
-    notesView.render(model.state.notes)
-  } else notesView.renderMessage()
+  notesView.render(model.state.notes)
 }
 
 start()

@@ -3,7 +3,8 @@ import { Note } from '../components/Note.js'
 class NotesView {
   _parentEl = document.querySelector('.notes__list')
   _data
-  _message = 'Nenhuma nota salva. <br>Comece adicionando uma \u{1F642} </br>'
+  _message =
+    '<h3>Nenhuma nota salva. <br>Comece adicionando uma \u{1F642} </br></h3>'
 
   constructor() {
     this.addHandlerAddAttention()
@@ -12,11 +13,13 @@ class NotesView {
 
   render(data) {
     this._data = data
-    const markup = this._generateMarkup()
+    const markup =
+      this._data.length > 0 ? this._generateMarkup() : this._message
+
     this._clear()
     this._parentEl.insertAdjacentHTML('afterbegin', markup)
 
-    this._loadData()
+    if (this._data) this._loadData()
   }
 
   _clear() {
@@ -52,12 +55,6 @@ class NotesView {
     return m.join('')
   }
 
-  renderMessage() {
-    const markup = `<h3>${this._message}</h3>`
-    this._clear()
-    this._parentEl.insertAdjacentHTML('afterbegin', markup)
-  }
-
   addHandlerSaveNote(handler) {
     this._parentEl.addEventListener('click', function (e) {
       const save_btn = e.target.closest('.note__save')
@@ -81,8 +78,6 @@ class NotesView {
       if (!del_btn) return
 
       const note = del_btn.parentNode.parentNode
-
-      console.log(note)
 
       handler(parseInt(note.id))
     })

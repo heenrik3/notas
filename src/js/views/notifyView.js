@@ -1,6 +1,6 @@
 import { Notification } from '../components/Notification.js'
 
-const NOTIFICATION_TIMEOUT = 3
+const NOTIFICATION_TIMEOUT = 3 //secs
 
 class NotifyView {
   _parentEl = document.querySelector('.notification')
@@ -39,7 +39,6 @@ class NotifyView {
   removeGeneratedNotif() {
     const _this = this
     setTimeout(function () {
-      console.log(_this._parentEl.childNodes)
       _this._parentEl.removeChild(_this._parentEl.childNodes[0])
     }, 1000 * NOTIFICATION_TIMEOUT)
   }
