@@ -12,9 +12,10 @@ async function controlAddNote() {
 
 async function controlDeleteNote(index) {
   model.decreaseNoteCount(index)
-  model.state.notes.length < 1
-    ? notesView.renderMessage()
-    : notesView.render(model.state.notes)
+
+  if (model.state.notes.length < 1) notesView.renderMessage()
+  else notesView.render(model.state.notes)
+
   notifyView.newNotification('error', `Nota ${index + 1} excluida`)
 }
 
@@ -34,7 +35,7 @@ function start() {
   notesView.addHandlerSaveNote(controlSaveNote)
   notesView.addHandlerDeleteNote(controlDeleteNote)
 
-  if (model.state.notes.length > 0) {
+  if (model.state.notes) {
     notesView.render(model.state.notes)
   } else notesView.renderMessage()
 }

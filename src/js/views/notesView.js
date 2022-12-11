@@ -82,6 +82,8 @@ class NotesView {
 
       const note = del_btn.parentNode.parentNode
 
+      console.log(note)
+
       handler(parseInt(note.id))
     })
   }

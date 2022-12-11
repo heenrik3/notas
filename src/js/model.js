@@ -1,30 +1,23 @@
 export const state = {
   notes: [],
 }
+const colors = ['red', 'green', 'yellow', 'blue', 'purple', 'gray', 'pink']
 
-const Note = (data) => {
+const Note = () => {
   return {
-    id: data.id,
-    color: data.color,
-    text: data.text,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    id: state.notes.length,
+    text: '',
   }
-}
-
-export const addNote = (data) => {
-  state.notes.push(Note(data))
 }
 
 export async function increaseNoteCount(data) {
   if (data) {
-    state.notes[data.id]['text'] = data['text']
+    state.notes[data.id].text = data.text
   } else {
-    const colors = ['red', 'green', 'yellow', 'blue', 'purple', 'gray', 'pink']
-    const new_data = {
-      color: colors[Math.floor(Math.random() * colors.length)],
-      id: state.notes.length,
-      text: '',
-    }
-    state.notes.push(new_data)
+    const emptyNote = Note()
+
+    state.notes.push(emptyNote)
   }
 
   persistNotes()
@@ -33,22 +26,18 @@ export async function increaseNoteCount(data) {
 export async function decreaseNoteCount(index) {
   state.notes.splice(index, 1)
 
-  for (var i = index; i < state.notes.length; i++) {
-    state.notes[i]['id'] -= 1
-  }
+  state.notes.forEach((item, index) => {
+    item.id = index
+  })
 
   persistNotes()
 }
 
-function persistNotes() {
+async function persistNotes() {
   localStorage.setItem('notes', JSON.stringify(state.notes))
 }
 
-function clearNotes() {
-  localStorage.clear('notes')
-}
-
-function start() {
+async function start() {
   const storage = localStorage.getItem('notes')
   if (storage) state.notes = JSON.parse(storage)
 }
