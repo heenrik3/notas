@@ -76,6 +76,9 @@
     color: #303030
     font-size: 1.6rem
 
+    &::placeholder
+      opacity: .3
+
     &::-webkit-scrollbar
       width: 5px
 
@@ -86,8 +89,10 @@
       background: #888
 
   &__action
+    // opacity: 0
     display: flex
     justify-content: flex-end
+    gap: 1rem
 
   &__btn
     width: 3rem
@@ -112,6 +117,7 @@
   // animation: heartbeat 1.5s ease-in-out infinite both
   // animation: color-change-3x 4s ease-in infinite alternate both
 
+
 .note_attention
   margin-top: -1rem
 
@@ -119,6 +125,9 @@
   // box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17)
   // -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017))
   // filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017))
+
+  // & .note__action
+  //   opacity: 1
 
 .hidden
   opacity: 0
