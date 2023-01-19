@@ -1,0 +1,31 @@
+.notes
+    margin: 0 2rem 10rem $default-margin
+    background-color: white
+    @include default-border-radius
+
+    display: flex
+    overflow: auto
+
+    @include respond(tab-land)
+        margin: 0 1.5rem 10rem 1.5rem
+    @include respond(tab-port)
+        margin: 0 1.2rem 10rem 1.2rem
+    @include respond(phone)
+        margin: 0 1rem 10rem 1rem
+
+    &__list
+        padding: $default-margin
+        
+        display: flex
+        gap: $default-margin
+        flex-wrap: wrap
+
+        @include respond(tab-land)
+            padding: 1.5rem
+            gap: 1.5rem
+        @include respond(tab-port)
+            padding: 1.2rem
+            gap: 1.2rem
+        @include respond(phone)
+            padding: 1rem
+            gap: 1rem

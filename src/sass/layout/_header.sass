@@ -1,0 +1,67 @@
+.header
+    margin: $default-margin
+    padding: 1.5rem 2rem
+    background-color: white
+    @include default-border-radius
+
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: $default-margin
+
+    @include respond(tab-land)
+        margin: 1.5rem
+        padding: 1.5rem       
+    @include respond(tab-port)
+        margin: 1.2rem
+        padding: 1.2rem       
+    @include respond(phone)
+        margin: 1rem
+        padding: 1rem       
+
+    &__logo
+        & img
+            height: 3rem
+            pointer-events: none
+
+            @include respond(tab-land)
+                height: 2.5rem        
+            @include respond(tab-port)
+                height: 2rem
+            @include respond(phone)
+                height: 1.5rem
+            
+    &__search
+        width: 50rem
+        padding: 0 1rem
+        background-color: #f0f0f0
+        @include default-border-radius
+        
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 1rem
+
+    &__input
+        padding: 1rem
+        width: 100%
+        background-color: transparent
+
+    &__add--note
+        padding: 1rem 2rem
+        color: white
+        background-color: $primary
+        @include default-border-radius
+        display: flex
+        align-items: center
+        gap: 5px
+
+        &:hover, &:active
+            background-color: darken($primary, 35%)
+
+        @include respond(tab-land)
+            padding: 1.5rem       
+        @include respond(tab-port)
+            padding: 1.2rem       
+        @include respond(phone)
+            padding: 1rem   

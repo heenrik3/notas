@@ -1,0 +1,108 @@
+.note
+    height: 20rem
+    min-width: 20rem
+    padding: $default-margin
+    @include default-border-radius
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px
+
+    font-weight: 500
+
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    flex-grow: 1
+
+    &:hover 
+        @include default-box-shadow
+        transform: translateY(-10px)
+        
+        .note__delete
+            transform: translateY(0px)
+            opacity: 1
+
+
+    &__text
+        height: 100% !important
+        width: 100% !important
+        resize: none
+        background: transparent
+
+    &__actions
+        display: flex
+        justify-content: right
+
+    &__delete
+        height: 3rem
+        width: 3rem
+        border-radius: 50%
+
+        background-color: white
+
+        transform: translateY(10px)
+        opacity: 0
+
+        &:hover, &:active, &:focus
+            // background-color: darken(white, 5%)
+            transform: translateY(0px)
+            opacity: 1
+
+        @include respond(tab-land)
+            transform: translateY(0px)
+            opacity: 1
+
+
+.red
+   background-color: $red
+
+.pink
+    background-color: $pink
+
+.purple
+    background-color: $purple
+
+.deep-purple
+    background-color: $deep-purple
+
+.indigo
+    background-color: $indigo
+
+.blue
+    background-color: $blue
+
+.light-blue
+    background-color:  $light-blue
+
+.cyan
+    background-color: $cyan
+
+.teal
+    background-color: $teal
+
+.green
+    background-color: $green
+
+.light-green
+    background-color: $light-green
+
+.lime
+    background-color: $lime
+
+.yellow
+    background-color: $yellow
+
+.amber
+    background-color: $amber
+
+.orange
+    background-color: $orange
+
+.deep-orange
+    background-color: $deep-orange
+
+.brown
+    background-color: $brown
+
+.blue-grey
+    background-color: $blue-grey
+
+    
